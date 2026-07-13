@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|d:\\b\u00E0i h\u1ECDc - b\u00E0i t\u1EADp\\ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\doan\\checkout_sele\\checkout\\stepdefinitions\\checkoutfunctionalsteps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|solutionrelative:checkout\\stepdefinitions\\checkoutfunctionalsteps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|d:\\b\u00E0i h\u1ECDc - b\u00E0i t\u1EADp\\ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\doan\\checkout_sele\\checkout\\features\\checkoutfunctional.feature||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|solutionrelative:checkout\\features\\checkoutfunctional.feature||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|d:\\b\u00E0i h\u1ECDc - b\u00E0i t\u1EADp\\ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\doan\\checkout_sele\\checkout\\pages\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|solutionrelative:checkout\\pages\\basepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|d:\\b\u00E0i h\u1ECDc - b\u00E0i t\u1EADp\\ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\doan\\checkout_sele\\checkout\\pages\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|solutionrelative:checkout\\pages\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|d:\\b\u00E0i h\u1ECDc - b\u00E0i t\u1EADp\\ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\doan\\checkout_sele\\checkout\\pages\\checkoutpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|solutionrelative:checkout\\pages\\checkoutpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|d:\\b\u00E0i h\u1ECDc - b\u00E0i t\u1EADp\\ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\doan\\checkout_sele\\checkout\\implicitusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F587E40-B66E-4018-A254-3CB271BFC08C}|Checkout\\Checkout.csproj|solutionrelative:checkout\\implicitusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CheckoutFunctionalSteps.cs",
+              "DocumentMoniker": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\StepDefinitions\\CheckoutFunctionalSteps.cs",
+              "RelativeDocumentMoniker": "Checkout\\StepDefinitions\\CheckoutFunctionalSteps.cs",
+              "ToolTip": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\StepDefinitions\\CheckoutFunctionalSteps.cs",
+              "RelativeToolTip": "Checkout\\StepDefinitions\\CheckoutFunctionalSteps.cs",
+              "ViewState": "AgIAAC0BAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T09:06:31.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CheckoutFunctional.feature",
+              "DocumentMoniker": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\Features\\CheckoutFunctional.feature",
+              "RelativeDocumentMoniker": "Checkout\\Features\\CheckoutFunctional.feature",
+              "ToolTip": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\Features\\CheckoutFunctional.feature",
+              "RelativeToolTip": "Checkout\\Features\\CheckoutFunctional.feature",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVDhPddBPiNR1GMfx1/c36\u002Bx/29Ylf7NUrriiKIhhHYKgdMMgukXNEBSCFEInb3WKghYCIRBBOnjpoLOHBMsOQaBQQhc71EFrUwmUmdm1Nqddnd119tth9zc7s9hz\u002B36ez\u002Bf9PN8neFSdSwcFe7AdDwW3NF33VnWhwxdjDJ0CptIjOI496FrrLOFXTCpVz7dH1gHltAcn8D50J3mLK0uSkOhO8h40G5nzAyGcUKw0IWkBeA/HYO9ju/w4ccHezbu8M/aGy4fOC\u002BuzPhLjy9ljFVBOh/AJcsP5IfXledv6n/L8yLNeLUy4//CBKGaZXnzqm9Gg9YVyWkR5W/\u002BTLh38yve1H3z\u002B2xf\u002BXvrHcH7IX4tzZhbvZgBr19qpVL2RfWE/3LlfcebmWV0hp9aYVWvMulaf3hi2Nni/tht0QTOu\u002BHPhtmv1aY3mYss9PjBmct\u002BHDqcvtTT0awPchPHB7U4dmHRo6wtGurfYkn9coecJuZDzSnrQ6QOftQNua91gKt0h\u002Bj0IyY6BMfeW665MfO3k9Bm7N4/bPTju9StH9eX6VBo1aBC3KtXqqxsUqzfwZRT9MX/L4KYBISR\u002BnvvFT3evGu1NNeNKFoazSrX6\u002BgZQTkdxEc/AcH7I3NI9SUj0dfX6d3k\u002Bc84I8UXF2vVOAJxLRwSn8Rp6OnqrtYCiUvXbTOgEwFRhk\u002Bg54jG83dap4l2l6sU27RGArKYKh8X4He7gAuFjpcrMRtv/A8qFp4n7cFXSrHhzdqMD/AfXwLdp/4rZ5QAAAABJRU5ErkJggg==",
+              "WhenOpened": "2026-06-02T08:44:41.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomePage.cs",
+              "DocumentMoniker": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\Pages\\HomePage.cs",
+              "RelativeDocumentMoniker": "Checkout\\Pages\\HomePage.cs",
+              "ToolTip": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\Pages\\HomePage.cs",
+              "RelativeToolTip": "Checkout\\Pages\\HomePage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T08:45:03.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CheckoutPage.cs",
+              "DocumentMoniker": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\Pages\\CheckoutPage.cs",
+              "RelativeDocumentMoniker": "Checkout\\Pages\\CheckoutPage.cs",
+              "ToolTip": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\Pages\\CheckoutPage.cs",
+              "RelativeToolTip": "Checkout\\Pages\\CheckoutPage.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T08:44:59.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BasePage.cs",
+              "DocumentMoniker": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\Pages\\BasePage.cs",
+              "RelativeDocumentMoniker": "Checkout\\Pages\\BasePage.cs",
+              "ToolTip": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\Pages\\BasePage.cs",
+              "RelativeToolTip": "Checkout\\Pages\\BasePage.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T08:44:57.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ImplicitUsings.cs",
+              "DocumentMoniker": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\ImplicitUsings.cs",
+              "RelativeDocumentMoniker": "Checkout\\ImplicitUsings.cs",
+              "ToolTip": "D:\\B\u00E0i h\u1ECDc - B\u00E0i t\u1EADp\\Ki\u1EC3m \u0111\u1ECBnh ph\u1EA7n m\u1EC1m\\DOAN\\Checkout_Sele\\Checkout\\ImplicitUsings.cs",
+              "RelativeToolTip": "Checkout\\ImplicitUsings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T16:57:14.177Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

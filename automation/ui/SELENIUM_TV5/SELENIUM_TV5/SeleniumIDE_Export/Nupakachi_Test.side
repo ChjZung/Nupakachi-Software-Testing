@@ -1,0 +1,828 @@
+{
+  "id": "b11b5980-a8b7-405e-ad62-d80432eabba7",
+  "version": "2.0",
+  "name": "Nupakachi_Test",
+  "url": "http://nupakachi.somee.com",
+  "tests": [{
+    "id": "ddaf6007-2fc5-4337-9a85-df1fe694ef7d",
+    "name": "TC31_OpenReportPage",
+    "commands": [{
+      "id": "7426a770-4236-4754-87ce-c587ab9747b2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c740801b-86da-4be0-9ee8-c96ee565928c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26556c01-0ae4-4f7d-944e-deabeb997391",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.btn-light", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Account/DangNhap')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "825d092b-8d1d-42c6-95f5-6b15514a4255",
+      "comment": "",
+      "command": "click",
+      "target": "id=loginInput",
+      "targets": [
+        ["id=loginInput", "id"],
+        ["name=loginInput", "name"],
+        ["css=#loginInput", "css:finder"],
+        ["xpath=//input[@id='loginInput']", "xpath:attributes"],
+        ["xpath=//form[@id='frmDangNhap']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcb88bd4-b653-4041-99cb-34424e8304d9",
+      "comment": "",
+      "command": "type",
+      "target": "id=loginInput",
+      "targets": [
+        ["id=loginInput", "id"],
+        ["name=loginInput", "name"],
+        ["css=#loginInput", "css:finder"],
+        ["xpath=//input[@id='loginInput']", "xpath:attributes"],
+        ["xpath=//form[@id='frmDangNhap']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "13d38ea0-5ff9-4bfa-a775-1074ac5c7906",
+      "comment": "",
+      "command": "click",
+      "target": "id=passwordInput",
+      "targets": [
+        ["id=passwordInput", "id"],
+        ["name=MATKHAU", "name"],
+        ["css=#passwordInput", "css:finder"],
+        ["xpath=//input[@id='passwordInput']", "xpath:attributes"],
+        ["xpath=//form[@id='frmDangNhap']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbae8cab-bb1f-40ff-ac8a-f46a69ee8942",
+      "comment": "",
+      "command": "type",
+      "target": "id=passwordInput",
+      "targets": [
+        ["id=passwordInput", "id"],
+        ["name=MATKHAU", "name"],
+        ["css=#passwordInput", "css:finder"],
+        ["xpath=//input[@id='passwordInput']", "xpath:attributes"],
+        ["xpath=//form[@id='frmDangNhap']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "b33ab8cd-b46a-4098-870a-81cecaa90d9d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='frmDangNhap']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Đăng nhập')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e62f8693-5ff4-4ce8-a4ff-c5765a3bf015",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42d3d9f1-521a-4a9c-b4c3-3d29a8a22369",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4926213-3157-4ab9-8c0e-50f5faa29c20",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e8565782-9c94-4810-bde1-c338967c7e90",
+    "name": "TC32 - Hiển thị báo cáo doanh thu theo tháng",
+    "commands": [{
+      "id": "b2cde2c2-7e8e-4219-9f1e-e58ddb0bf9ea",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19196baf-4900-4840-9e8e-a0119e8de371",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c10ddb6f-c4e0-490e-830f-ae4f18ca1bce",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c97f0ca0-65da-4703-9906-3f0398ecd7b5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e07b0fb7-71c5-410b-852b-07d89c615e79",
+      "comment": "",
+      "command": "click",
+      "target": "name=tuNgay",
+      "targets": [
+        ["name=tuNgay", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='tuNgay']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad2b9192-0482-4b1f-93c8-3993629d89b0",
+      "comment": "",
+      "command": "type",
+      "target": "name=tuNgay",
+      "targets": [
+        ["name=tuNgay", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='tuNgay']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "2026-02-10"
+    }, {
+      "id": "4249fca3-0fe7-4d7d-b12d-59b164ff86d4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(4)",
+      "targets": [
+        ["css=.row:nth-child(4)", "css:finder"],
+        ["xpath=//div[2]/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7bc5ba10-5110-4aa1-b6b9-ea39cbf63dae",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Xem báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54d7bf81-83ea-44cb-9233-f2974df986ff",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "073df213-ea5f-4bd0-bb49-4b5ef2d7d5a5",
+    "name": "TC33 - Lọc báo cáo theo ngày hợp lệ",
+    "commands": [{
+      "id": "cd70da49-7e89-48b9-9d2c-ada93e522e90",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f0d92c4-db1c-49ce-8056-ec73062f8856",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ce4075d-c331-4f49-b18a-73f82b48613d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "23f0be65-a40c-475d-ae7c-a5e2bf8c4aa5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "92230cfc-7704-4660-a1a4-9e83f1323621",
+      "comment": "",
+      "command": "click",
+      "target": "name=tuNgay",
+      "targets": [
+        ["name=tuNgay", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='tuNgay']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92f1669f-bda7-4514-9bfb-c256b07f18f0",
+      "comment": "",
+      "command": "type",
+      "target": "name=tuNgay",
+      "targets": [
+        ["name=tuNgay", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='tuNgay']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "2024-02-22"
+    }, {
+      "id": "2ba278f6-0d84-4cfa-a5f4-f7478ada94d7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Xem báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e82f68f-1da9-4106-a2b7-b261dc116a34",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e6322ce1-b166-4813-b4de-19de0bf0c7b6",
+    "name": "TC34 - Lọc ngày bắt đầu lớn hơn ngày kết thúc",
+    "commands": [{
+      "id": "91444300-acf9-447b-9441-a23d4d803cf5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ee83df9-3df7-40fd-a220-9f542b778faf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fef00a47-acd1-468a-bcf9-5c807debe6d5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1535483a-7643-4f17-89f1-545e1a3f6f1a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c674ebdc-51c0-4354-af5c-bca6541486d1",
+      "comment": "",
+      "command": "click",
+      "target": "name=tuNgay",
+      "targets": [
+        ["name=tuNgay", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='tuNgay']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbf65908-b090-4cdf-8e6b-43f92652c749",
+      "comment": "",
+      "command": "type",
+      "target": "name=tuNgay",
+      "targets": [
+        ["name=tuNgay", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='tuNgay']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "2026-05-31"
+    }, {
+      "id": "43923ad6-0ef6-40c3-9276-749dba1d615b",
+      "comment": "",
+      "command": "click",
+      "target": "name=denNgay",
+      "targets": [
+        ["name=denNgay", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='denNgay']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "32f2e36f-0883-4a93-b186-bf2ae45f91bd",
+      "comment": "",
+      "command": "type",
+      "target": "name=denNgay",
+      "targets": [
+        ["name=denNgay", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='denNgay']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2026-05-31"
+    }, {
+      "id": "52853800-576d-4e15-a440-81ef18908600",
+      "comment": "",
+      "command": "click",
+      "target": "name=denNgay",
+      "targets": [
+        ["name=denNgay", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='denNgay']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bed3f27-f26a-42bd-ad2e-5b1f740a22d1",
+      "comment": "",
+      "command": "type",
+      "target": "name=denNgay",
+      "targets": [
+        ["name=denNgay", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='denNgay']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2026-05-30"
+    }, {
+      "id": "4b9fcbf2-4a19-4ed1-807a-6dba32593595",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Xem báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c0ca8c1-b336-49a4-b315-6122a94d53d7",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "252b4d5a-ef3b-4f7c-a5ad-36fc7b018b59",
+    "name": "TC35 - Lọc ngày tương lai",
+    "commands": [{
+      "id": "7a63b640-1502-4712-9ef9-0d722cf622a4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e589b6f-3b58-4374-8ebc-bc7b2efb2718",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5dc838ef-6df7-497c-95d9-5b44f49cf543",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f9edb69-b0c7-442d-a031-fb88a9f57d49",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c335032a-a0a6-4564-bf31-b40f2cc2a776",
+      "comment": "",
+      "command": "click",
+      "target": "name=denNgay",
+      "targets": [
+        ["name=denNgay", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='denNgay']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4de8c6fc-b031-45ad-89ee-302b95dc7717",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(4)",
+      "targets": [
+        ["css=.row:nth-child(4)", "css:finder"],
+        ["xpath=//div[2]/div/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "642045c1-fbba-4d0c-a86b-381112238489",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d26c659b-5cab-48fe-b4c2-c6dbd9c2846e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd580a6b-cc52-40bd-85a5-cbf6aa5760b4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c97bfb5a-2a4a-471e-bab5-11128e36671a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản lý danh mục",
+      "targets": [
+        ["linkText=Quản lý danh mục", "linkText"],
+        ["css=.nav-link:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản lý danh mục')]", "xpath:link"],
+        ["xpath=//div[@id='salesMenu']/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanLyDanhMuc')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,' Quản lý danh mục')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cccc7ee-ceea-48a0-9f3f-bcf39e98dc76",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-inline:nth-child(1) > .form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-inline:nth-child(1) > .form-control:nth-child(1)", "css:finder"],
+        ["xpath=(//input[@name='search'])[2]", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9779f292-89b1-4245-a214-f6b35184a852",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-inline:nth-child(1) > .form-control:nth-child(1)",
+      "targets": [
+        ["css=.form-inline:nth-child(1) > .form-control:nth-child(1)", "css:finder"],
+        ["xpath=(//input[@name='search'])[2]", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "váy"
+    }, {
+      "id": "87a58fc7-9390-493d-a722-433353daac3d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Tìm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aedd4b04-6b52-4b87-9bee-bd12341f5eec",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a0b5b410-1b47-425b-96d0-574ee33ba074",
+    "name": "TC36 - Tìm kiếm dữ liệu thống kê",
+    "commands": []
+  }, {
+    "id": "b491a1fe-ef93-497b-92d3-57d421dece66",
+    "name": "TC37 - Tìm kiếm không có kết quả",
+    "commands": []
+  }, {
+    "id": "218e7be6-780e-469a-b547-3173f15d8b53",
+    "name": "TC38 - Xem biểu đồ doanh thu",
+    "commands": [{
+      "id": "54b8d50c-ca84-4da6-8ca6-c1999069f6a5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f680f4c-552a-4b9e-ba87-8a74f21a7443",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ce4bb0d-f79e-4e40-8d2a-c556d3676bad",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe38ef1c-ef1c-476a-9dea-91b66387606d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c988717-44c0-40bf-a3d7-06644ef3b81a",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0f67d8bc-f46e-4067-84e8-4c3e872e0ad2",
+    "name": "TC39 - Tooltip biểu đồ doanh thu",
+    "commands": []
+  }, {
+    "id": "f1bea7d5-7090-4194-a672-ee0e211a2879",
+    "name": "TC40 - Xuất Excel",
+    "commands": [{
+      "id": "6d018bd7-5dff-4cdd-8808-b3a97f62c49e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "24f2921f-f43c-4755-9aab-02ccb6124811",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16aa951e-fa9a-4909-a4ed-41cd553cc463",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a98eb657-de46-4921-a10c-cd5bb86168da",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b449645d-63dc-440f-9278-21a0b6fee350",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7df6a239-e86c-4603-aa8f-01cfbb9e12ef",
+    "name": "TC41 - Xuất PDF",
+    "commands": []
+  }, {
+    "id": "0d1749e9-4d19-4d2b-88c7-93a1c56b0271",
+    "name": "TC42 - Phân trang dữ liệu báo cáo",
+    "commands": []
+  }, {
+    "id": "355f5ff4-75e4-41d0-b757-c6a90e3604ee",
+    "name": "TC43 - Large Data Loading",
+    "commands": [{
+      "id": "a9b0424b-5178-45b5-82ec-fbe5d0d41f34",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4c544e02-7661-4582-9cf5-a1148d5ea5eb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "784x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "abd060fa-2ae8-4230-9f04-26f0d5b6403a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quản Trị",
+      "targets": [
+        ["linkText=Quản Trị", "linkText"],
+        ["css=.nav-item > .text-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'Quản Trị')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[6]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Admin/QuanTriAdmin')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Quản Trị')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2709d5d4-3a9f-42a2-8a22-d16dc3d69c8b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Báo cáo",
+      "targets": [
+        ["linkText=Báo cáo", "linkText"],
+        ["css=.nav > li:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(@href, '/Admin/BaocaoThongKe')]", "xpath:href"],
+        ["xpath=//nav/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6cda65f6-293d-4c1a-bff4-fd07c03ddeca",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Xem báo cáo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42029b59-0f81-4ad9-a2c3-4122605f46f4",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ca2a2706-9d10-4e4d-a123-80c73746e8c6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://nupakachi.somee.com/"],
+  "plugins": []
+}

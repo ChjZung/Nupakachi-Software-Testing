@@ -1,0 +1,614 @@
+{
+  "info": {
+    "_postman_id": "e5dce7d3-20e3-49e7-a594-7f5c918e574d",
+    "name": "01_Auth_Tests_API",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54581943",
+    "_collection_link": "https://go.postman.co/collection/54581943-e5dce7d3-20e3-49e7-a594-7f5c918e574d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "TC01 - Đăng ký: Số điện thoại đã tồn tại",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// 1. Kiểm tra xem web có phản hồi không (Status 200 OK)\r",
+              "pm.test(\"Web phản hồi thành công (Status 200)\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "// 2. Đọc toàn bộ mã HTML mà web trả về\r",
+              "let htmlBody = pm.response.text();\r",
+              "\r",
+              "// 3. Quét xem trong mã HTML đó có hiển thị dòng chữ báo lỗi không\r",
+              "pm.test(\"Báo lỗi chính xác: Số điện thoại đã tồn tại\", function () {\r",
+              "    // CHÚ Ý: Nếu web của bạn báo lỗi bằng câu chữ khác, hãy sửa lại đoạn text bên dưới cho giống 100% với chữ trên web nhé.\r",
+              "    pm.expect(htmlBody).to.include(\"Số điện thoại này đã được sử dụng\"); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenKhachHang",
+              "value": "Nguyễn Văn Test",
+              "type": "text",
+              "uuid": "9673eb13-1112-4ace-9348-9a0aa8055cd0"
+            },
+            {
+              "key": "SoDienThoai",
+              "value": "0901234567",
+              "type": "text",
+              "uuid": "1b0e27a9-a430-49e6-ad95-8e97555d20f4"
+            },
+            {
+              "key": "TenDangNhap",
+              "value": "usertest123",
+              "type": "text",
+              "uuid": "39a2ed1b-e6e6-4bf9-b69f-b8607c327de1"
+            },
+            {
+              "key": "MatKhau",
+              "value": "Password123",
+              "type": "text",
+              "uuid": "722e34e9-2478-4794-8e20-adbb0e5d53ea"
+            },
+            {
+              "key": "XacNhanMatKhau",
+              "value": "Password123",
+              "type": "text",
+              "uuid": "40238e2f-20ef-4814-a4b4-00fe067b1016"
+            },
+            {
+              "key": "Email",
+              "value": "test12345@gmail.com",
+              "type": "text",
+              "uuid": "f9ed4344-dd45-4890-87e6-cee89712afe3"
+            },
+            {
+              "key": "",
+              "value": "",
+              "type": "text",
+              "uuid": "2f8a4f09-ea7f-4dea-bf94-57c49d736b34"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangKy",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangKy"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC02 - Nhập tên đăng nhập đã tồn tại trong DB",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let htmlBody = pm.response.text();\r",
+              "pm.test(\"Báo lỗi: Tên đăng nhập đã tồn tại\", function () {\r",
+              "    pm.expect(htmlBody).to.include(\"Tên đăng nhập này đã tồn tại\"); // Sửa lại text cho giống web bạn\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenKhachHang",
+              "value": "Nguyễn Văn Hồng",
+              "type": "text",
+              "uuid": "efb4e97c-b226-4fc2-af1c-40385412cfd3"
+            },
+            {
+              "key": "SoDienThoai",
+              "value": "0911111111",
+              "type": "text",
+              "uuid": "50f7b984-3565-444a-b00c-5bcf7a2782e5"
+            },
+            {
+              "key": "TenDangNhap",
+              "value": "admin",
+              "type": "text",
+              "uuid": "adb4793d-79da-45c0-a262-1212fbe1622a"
+            },
+            {
+              "key": "MatKhau",
+              "value": "Pass123!",
+              "type": "text",
+              "uuid": "0bad6def-ec3e-4bcf-917b-eb66fb81fc32"
+            },
+            {
+              "key": "XacNhanMatKhau",
+              "value": "Pass123!",
+              "type": "text",
+              "uuid": "2e86b0e3-3269-4762-8356-6787c8ac0337"
+            },
+            {
+              "key": "Email",
+              "value": "testb@gmail.com",
+              "type": "text",
+              "uuid": "616fe6b3-56ed-4883-b23c-14bf2883f87e"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangKy",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangKy"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC03 - Nhập Email đã tồn tại trong hệ thống",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let htmlBody = pm.response.text();\r",
+              "pm.test(\"Báo lỗi: Email đã tồn tại\", function () {\r",
+              "    pm.expect(htmlBody).to.include(\"Email này đã được sử dụng\"); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenKhachHang",
+              "value": "Nguyễn Văn B",
+              "type": "text",
+              "uuid": "e1a42fb4-7a20-46b4-bee8-ba17c188d428"
+            },
+            {
+              "key": "SoDienThoai",
+              "value": "0901234575",
+              "type": "text",
+              "uuid": "2ff08cdb-e30f-46f7-b065-bbc444af2df6"
+            },
+            {
+              "key": "TenDangNhap",
+              "value": "usertest123",
+              "type": "text",
+              "uuid": "5120c246-49bb-4433-97f5-b726c6d5e084"
+            },
+            {
+              "key": "MatKhau",
+              "value": "Password123",
+              "type": "text",
+              "uuid": "91f6c6bc-9dbe-4d49-a60a-cd4f9a6a9feb"
+            },
+            {
+              "key": "XacNhanMatKhau",
+              "value": "Password123",
+              "type": "text",
+              "uuid": "b6822706-6293-497e-bdfc-e558dbae74f3"
+            },
+            {
+              "key": "Email",
+              "value": "nva@gmail.com",
+              "type": "text",
+              "uuid": "9da5b401-4cbb-4f6d-aa05-47369335e7aa"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangKy",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangKy"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC08 - Xử lý ký tự Emoji lưu vào Database",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Khi đăng ký thành công, web MVC thường chuyển hướng (Redirect 302) về trang Đăng Nhập hoặc Trang chủ\r",
+              "pm.test(\"Lưu thành công, không bị lỗi font (Status 200 hoặc 302)\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenKhachHang",
+              "value": "Nguyễn Văn Test 😊",
+              "type": "text",
+              "uuid": "c5dd7aaf-7817-4de5-9c84-8ddcf8165f4e"
+            },
+            {
+              "key": "SoDienThoai",
+              "value": "0901234598",
+              "type": "text",
+              "uuid": "a5c62c10-2723-47ca-a107-cb5e1ea2513a"
+            },
+            {
+              "key": "TenDangNhap",
+              "value": "usertest123",
+              "type": "text",
+              "uuid": "185907c9-3933-48aa-bb8e-07e089f302b2"
+            },
+            {
+              "key": "MatKhau",
+              "value": "Password123",
+              "type": "text",
+              "uuid": "9d85c968-5d70-48fe-96bd-a5511fe87c69"
+            },
+            {
+              "key": "XacNhanMatKhau",
+              "value": "Password123",
+              "type": "text",
+              "uuid": "92c26049-cef9-405d-be15-72741decae5e"
+            },
+            {
+              "key": "Email",
+              "value": "test12345@gmail.com",
+              "type": "text",
+              "uuid": "ad945d33-5ef0-47ee-9829-a5e4001a1c7a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangKy",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangKy"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC04 - Sai Tên đăng nhập hoặc Email",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let htmlBody = pm.response.text();\r",
+              "pm.test(\"Báo lỗi: Sai tài khoản\", function () {\r",
+              "    pm.expect(htmlBody).to.include(\"Tên đăng nhập hoặc mật khẩu không đúng\"); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenDangNhap",
+              "value": "UserKhongHeTonTai",
+              "type": "text",
+              "uuid": "75cf5e12-193b-4ab8-9715-0c851f93140a"
+            },
+            {
+              "key": "MatKhau",
+              "value": "MatKhauDung123!",
+              "type": "text",
+              "uuid": "9912716a-20c6-4d24-9ab1-dba665aab5c9"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangNhap",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangNhap"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC05 - Sai mật khẩu",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let htmlBody = pm.response.text();\r",
+              "pm.test(\"Báo lỗi: Sai tài khoản\", function () {\r",
+              "    pm.expect(htmlBody).to.include(\"Tên đăng nhập hoặc mật khẩu không đúng\"); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenDangNhap",
+              "value": "nguyenvana",
+              "type": "text",
+              "uuid": "d06a7b3c-40bf-4a2b-abc2-0c795823827d"
+            },
+            {
+              "key": "MatKhau",
+              "value": "MatKhauSaiBét!",
+              "type": "text",
+              "uuid": "93068085-606c-4632-84f9-ed3cd9c9c394"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangNhap",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangNhap"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC06 - Đăng nhập bằng tài khoản đã bị khóa",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let htmlBody = pm.response.text();\r",
+              "pm.test(\"Báo lỗi: Tài khoản bị khóa\", function () {\r",
+              "    pm.expect(htmlBody).to.include(\"Tài khoản của bạn đã bị khóa\"); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenDangNhap",
+              "value": "nguyenvana",
+              "type": "text",
+              "uuid": "d06a7b3c-40bf-4a2b-abc2-0c795823827d"
+            },
+            {
+              "key": "MatKhau",
+              "value": "Abc@123",
+              "type": "text",
+              "uuid": "93068085-606c-4632-84f9-ed3cd9c9c394"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangNhap",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangNhap"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC07 - Đăng nhập bằng tài khoản đã bị xóa",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let htmlBody = pm.response.text();\r",
+              "pm.test(\"Báo lỗi: Tài khoản bị xóa\", function () {\r",
+              "    pm.expect(htmlBody).to.include(\"Tài khoản không tồn tại\"); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenDangNhap",
+              "value": "nguyenvanb",
+              "type": "text",
+              "uuid": "d06a7b3c-40bf-4a2b-abc2-0c795823827d"
+            },
+            {
+              "key": "MatKhau",
+              "value": "Abc@123",
+              "type": "text",
+              "uuid": "93068085-606c-4632-84f9-ed3cd9c9c394"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangNhap",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangNhap"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC09 - Truy cập trang Login khi đã đăng nhập",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Kỳ vọng web không load lại trang đăng nhập mà redirect (chuyển hướng) về trang chủ\r",
+              "pm.test(\"Chuyển hướng về trang chủ\", function () {\r",
+              "    let htmlBody = pm.response.text();\r",
+              "    // Nếu web đá về trang chủ, trong HTML thường sẽ KHÔNG có chữ \"Đăng nhập hệ thống\" nữa\r",
+              "    pm.expect(htmlBody).to.not.include(\"Đăng nhập hệ thống\"); \r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "TenDangNhap",
+              "value": "quang@gmail.com",
+              "type": "text",
+              "uuid": "ce10431f-30e2-436c-937a-d8075f925bc0"
+            },
+            {
+              "key": "MatKhau",
+              "value": "123456",
+              "type": "text",
+              "uuid": "8103453c-bb8a-4956-a649-1a759476aa2a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://nupakachi.somee.com/Account/DangNhap",
+          "protocol": "http",
+          "host": [
+            "nupakachi",
+            "somee",
+            "com"
+          ],
+          "path": [
+            "Account",
+            "DangNhap"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

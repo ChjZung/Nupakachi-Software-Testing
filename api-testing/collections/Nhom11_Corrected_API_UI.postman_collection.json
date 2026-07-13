@@ -1,0 +1,1040 @@
+{
+  "info": {
+    "_postman_id": "a1374a04-9a0c-4c27-bc70-68534a6b1478",
+    "name": "Nhom11_Corrected_API_UI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Bản đã chỉnh: tách API và UI, sửa TC18, tránh JSONError khi response HTML, các endpoint /api phải fail rõ nếu 404/HTML."
+  },
+  "item": [
+    {
+      "name": "API - Reporting TC16-TC30",
+      "item": [
+        {
+          "name": "Login Page - Load trang đăng nhập",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Login Page - Trang đăng nhập load thành công', function () { pm.response.to.have.status(200); });\r",
+                  "pm.test('Login Page - Response là HTML', function () { pm.expect(pm.response.text().toLowerCase()).to.include('<!doctype html>'); });\r",
+                  "pm.test('Login Page - Có form đăng nhập', function () { const body = pm.response.text().toLowerCase(); pm.expect(body).to.satisfy(function(t){ return t.includes('login') || t.includes('đăng nhập') || t.includes('dang nhap') || t.includes('matkhau') || t.includes('password'); }); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/Account/DangNhap",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Account",
+                "DangNhap"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC16 - API lấy báo cáo doanh thu hợp lệ",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC16 - API revenue hợp lệ phải trả về 200', function () { pm.response.to.have.status(200); });\r",
+                  "assertNotHtml('TC16');\r",
+                  "assertJson('TC16');\r",
+                  "if (pm.response.code === 200 && isJsonResponse()) {\r",
+                  "    const data = pm.response.json();\r",
+                  "    pm.test('TC16 - Body có dữ liệu đúng nghiệp vụ', function () {\r",
+                  "        const text = JSON.stringify(data).toLowerCase();\r",
+                  "        pm.expect(text).to.satisfy(function (body) { return body.includes('revenue') || body.includes('doanhthu') || body.includes('tongdoanhthu') || body.includes('totalrevenue') || body.includes('orders') || body.includes('data'); });\r",
+                  "    });\r",
+                  "}\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/revenue?fromDate=2026-05-01&toDate=2026-05-19",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "revenue"
+              ],
+              "query": [
+                {
+                  "key": "fromDate",
+                  "value": "2026-05-01"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2026-05-19"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC17 - API Revenue thiếu fromDate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC17 - Thiếu fromDate phải bị từ chối', function () { pm.response.to.have.status(400); });\r",
+                  "assertNotHtml('TC17');\r",
+                  "pm.test('TC17 - Có thông báo lỗi thiếu fromDate', function () { const body = bodyText(); pm.expect(body).to.satisfy(function(t){ return t.includes('fromdate') || t.includes('required') || t.includes('thiếu') || t.includes('thieu') || t.includes('bad request'); }); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/revenue?toDate=2026-05-19",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "revenue"
+              ],
+              "query": [
+                {
+                  "key": "toDate",
+                  "value": "2026-05-19"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC18 - API Revenue ngày không hợp lệ",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC18 - fromDate lớn hơn toDate phải bị từ chối', function () { pm.response.to.have.status(400); });\r",
+                  "assertNotHtml('TC18');\r",
+                  "pm.test('TC18 - Có thông báo lỗi khoảng ngày không hợp lệ', function () { const body = bodyText(); pm.expect(body).to.satisfy(function(t){ return t.includes('fromdate') || t.includes('todate') || t.includes('start') || t.includes('end') || t.includes('invalid') || t.includes('bad request') || t.includes('ngày'); }); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/revenue?fromDate=2026-05-30&toDate=2026-05-01",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "revenue"
+              ],
+              "query": [
+                {
+                  "key": "fromDate",
+                  "value": "2026-05-30"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2026-05-01"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC19 - API Revenue ngày tương lai",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC19 - toDate tương lai phải bị từ chối', function () { pm.response.to.have.status(400); });\r",
+                  "assertNotHtml('TC19');\r",
+                  "pm.test('TC19 - Có thông báo lỗi ngày tương lai', function () { const body = bodyText(); pm.expect(body).to.satisfy(function(t){ return t.includes('future') || t.includes('todate') || t.includes('invalid') || t.includes('ngày hiện tại') || t.includes('ngay hien tai') || t.includes('bad request'); }); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/revenue?fromDate=2026-05-01&toDate=2027-05-19",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "revenue"
+              ],
+              "query": [
+                {
+                  "key": "fromDate",
+                  "value": "2026-05-01"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2027-05-19"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC20 - API Revenue không có token/session",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC20 - Không có token/session phải bị từ chối', function () { pm.expect(pm.response.code).to.be.oneOf([401, 403]); });\r",
+                  "pm.test('TC20 - Không được trả status 200', function () { pm.expect(pm.response.code).to.not.eql(200); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/revenue?fromDate=2026-05-01&toDate=2026-05-19",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "revenue"
+              ],
+              "query": [
+                {
+                  "key": "fromDate",
+                  "value": "2026-05-01"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2026-05-19"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC21 - API Revenue token sai",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC21 - Token sai/hết hạn phải bị từ chối', function () { pm.expect(pm.response.code).to.be.oneOf([401, 403]); });\r",
+                  "pm.test('TC21 - Không được trả status 200', function () { pm.expect(pm.response.code).to.not.eql(200); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer invalid_token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/revenue?fromDate=2026-05-01&toDate=2026-05-19",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "revenue"
+              ],
+              "query": [
+                {
+                  "key": "fromDate",
+                  "value": "2026-05-01"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2026-05-19"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC22 - API lấy thống kê đơn hàng",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC22 - API thống kê đơn hàng phải trả về 200', function () { pm.response.to.have.status(200); });\r",
+                  "assertNotHtml('TC22');\r",
+                  "assertJson('TC22');\r",
+                  "if (pm.response.code === 200 && isJsonResponse()) {\r",
+                  "    const data = pm.response.json();\r",
+                  "    pm.test('TC22 - Body có dữ liệu đúng nghiệp vụ', function () {\r",
+                  "        const text = JSON.stringify(data).toLowerCase();\r",
+                  "        pm.expect(text).to.satisfy(function (body) { return body.includes('orders') || body.includes('donhang') || body.includes('đơn') || body.includes('total') || body.includes('count') || body.includes('status'); });\r",
+                  "    });\r",
+                  "}\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/orders",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC23 - API Orders không có dữ liệu",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC23 - Khoảng ngày không có đơn hàng vẫn trả 200', function () { pm.response.to.have.status(200); });\r",
+                  "assertNotHtml('TC23');\r",
+                  "assertJson('TC23');\r",
+                  "if (pm.response.code === 200 && isJsonResponse()) {\r",
+                  "    const json = pm.response.json();\r",
+                  "    const data = json.orders || json.data || json;\r",
+                  "    pm.test('TC23 - Data rỗng hoặc tổng đơn bằng 0', function () {\r",
+                  "        if (Array.isArray(data)) { pm.expect(data.length).to.eql(0); }\r",
+                  "        else { const text = JSON.stringify(json).toLowerCase(); pm.expect(text).to.satisfy(function(t){ return t.includes('0') || t.includes('empty') || t.includes('no data') || t.includes('không có dữ liệu'); }); }\r",
+                  "    });\r",
+                  "}\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/orders?fromDate=2010-01-01&toDate=2010-01-02",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "fromDate",
+                  "value": "2010-01-01"
+                },
+                {
+                  "key": "toDate",
+                  "value": "2010-01-02"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC24 - API lấy sản phẩm bán chạy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC24 - API sản phẩm bán chạy phải trả về 200', function () { pm.response.to.have.status(200); });\r",
+                  "assertNotHtml('TC24');\r",
+                  "assertJson('TC24');\r",
+                  "if (pm.response.code === 200 && isJsonResponse()) {\r",
+                  "    const data = pm.response.json();\r",
+                  "    pm.test('TC24 - Body có dữ liệu đúng nghiệp vụ', function () {\r",
+                  "        const text = JSON.stringify(data).toLowerCase();\r",
+                  "        pm.expect(text).to.satisfy(function (body) { return body.includes('product') || body.includes('sanpham') || body.includes('sản phẩm') || body.includes('quantity') || body.includes('soluong') || body.includes('revenue'); });\r",
+                  "    });\r",
+                  "}\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/top-products",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "top-products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC25 - API Top products giới hạn top=5",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC25 - API top products top=5 phải trả về 200', function () { pm.response.to.have.status(200); });\r",
+                  "assertNotHtml('TC25');\r",
+                  "assertJson('TC25');\r",
+                  "if (pm.response.code === 200 && isJsonResponse()) {\r",
+                  "    let json = pm.response.json();\r",
+                  "    let data = json.products || json.data || json;\r",
+                  "    pm.test('TC25 - Số lượng sản phẩm không vượt quá 5', function () { pm.expect(data).to.be.an('array'); pm.expect(data.length).to.be.at.most(5); });\r",
+                  "}\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/top-products?top=5",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "top-products"
+              ],
+              "query": [
+                {
+                  "key": "top",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC26 - API Top products top không hợp lệ",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC26 - top không hợp lệ phải trả 400 hoặc 422', function () { pm.expect(pm.response.code).to.be.oneOf([400, 422]); });\r",
+                  "pm.test('TC26 - Response có thông báo lỗi', function () { pm.expect(pm.response.text()).to.not.be.empty; });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/top-products?top=-1",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "top-products"
+              ],
+              "query": [
+                {
+                  "key": "top",
+                  "value": "-1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC27 - API lấy thống kê tồn kho",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC27 - API thống kê tồn kho phải trả về 200', function () { pm.response.to.have.status(200); });\r",
+                  "assertNotHtml('TC27');\r",
+                  "assertJson('TC27');\r",
+                  "if (pm.response.code === 200 && isJsonResponse()) {\r",
+                  "    const data = pm.response.json();\r",
+                  "    pm.test('TC27 - Body có dữ liệu đúng nghiệp vụ', function () {\r",
+                  "        const text = JSON.stringify(data).toLowerCase();\r",
+                  "        pm.expect(text).to.satisfy(function (body) { return body.includes('stock') || body.includes('tonkho') || body.includes('tồn kho') || body.includes('inventory') || body.includes('soluong') || body.includes('quantity'); });\r",
+                  "    });\r",
+                  "}\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/inventory",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "inventory"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC28 - API tìm kiếm thống kê tồn kho",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "function isJsonResponse() {\r",
+                  "    const contentType = pm.response.headers.get('Content-Type') || '';\r",
+                  "    return contentType.toLowerCase().includes('application/json');\r",
+                  "}\r",
+                  "function bodyText() { return pm.response.text().toLowerCase(); }\r",
+                  "function assertNotHtml(tc) {\r",
+                  "    pm.test(tc + ' - Response không được là HTML', function () {\r",
+                  "        pm.expect(bodyText()).to.not.include('<!doctype html>');\r",
+                  "        pm.expect(bodyText()).to.not.include('<html');\r",
+                  "    });\r",
+                  "}\r",
+                  "function assertJson(tc) {\r",
+                  "    pm.test(tc + ' - Response phải là JSON', function () {\r",
+                  "        pm.response.to.be.json;\r",
+                  "    });\r",
+                  "}\r",
+                  "pm.test('TC28 - API tìm kiếm tồn kho phải trả về 200', function () { pm.response.to.have.status(200); });\r",
+                  "assertNotHtml('TC28');\r",
+                  "assertJson('TC28');\r",
+                  "if (pm.response.code === 200 && isJsonResponse()) {\r",
+                  "    const json = pm.response.json();\r",
+                  "    const data = json.inventory || json.data || json;\r",
+                  "    pm.test('TC28 - Kết quả tìm kiếm là danh sách', function () { pm.expect(data).to.be.an('array'); });\r",
+                  "}\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/inventory?keyword=ao",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "inventory"
+              ],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "ao"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC29 - API xuất báo cáo Excel",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('TC29 - Endpoint xuất Excel phải trả về 200', function () { pm.response.to.have.status(200); });\r",
+                  "pm.test('TC29 - Content-Type phải là Excel hoặc file nhị phân', function () { const ct = (pm.response.headers.get('Content-Type') || '').toLowerCase(); pm.expect(ct).to.satisfy(function(h){ return h.includes('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') || h.includes('application/vnd.ms-excel') || h.includes('application/octet-stream'); }); });\r",
+                  "pm.test('TC29 - Không được trả HTML', function () { pm.expect(pm.response.text().toLowerCase()).to.not.include('<!doctype html>'); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/export?type=excel",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "export"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "excel"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC30 - API xuất báo cáo PDF",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('TC30 - Endpoint xuất PDF phải trả về 200', function () { pm.response.to.have.status(200); });\r",
+                  "pm.test('TC30 - Content-Type phải là PDF', function () { const ct = (pm.response.headers.get('Content-Type') || '').toLowerCase(); pm.expect(ct).to.include('application/pdf'); });\r",
+                  "pm.test('TC30 - Không được trả HTML', function () { pm.expect(pm.response.text().toLowerCase()).to.not.include('<!doctype html>'); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/api/reports/export?type=pdf",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "export"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "pdf"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "UI - Admin Smoke Test",
+      "item": [
+        {
+          "name": "UI01 - Web hiển thị trang Báo cáo - Thống kê",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('UI - Trang load thành công', function () { pm.response.to.have.status(200); });\r",
+                  "const html = pm.response.text().toLowerCase();\r",
+                  "pm.test('UI - Response là HTML', function () { pm.expect(html).to.include('<!doctype html>'); });\r",
+                  "pm.test('UI - Không lỗi server', function () { pm.expect(html).to.not.include('internal server error'); pm.expect(html).to.not.include('exception'); });\r",
+                  "pm.test('UI01 - Có nội dung báo cáo/thống kê', function () { pm.expect(html).to.satisfy(function(t){ return t.includes('báo cáo') || t.includes('bao cao') || t.includes('thống kê') || t.includes('thong ke'); }); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/BaocaoThongKe",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "BaocaoThongKe"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UI02 - Web hiển thị Dashboard quản trị",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('UI - Trang load thành công', function () { pm.response.to.have.status(200); });\r",
+                  "const html = pm.response.text().toLowerCase();\r",
+                  "pm.test('UI - Response là HTML', function () { pm.expect(html).to.include('<!doctype html>'); });\r",
+                  "pm.test('UI - Không lỗi server', function () { pm.expect(html).to.not.include('internal server error'); pm.expect(html).to.not.include('exception'); });\r",
+                  "pm.test('UI02 - Có nội dung dashboard/quản trị', function () { pm.expect(html).to.satisfy(function(t){ return t.includes('dashboard') || t.includes('quản trị') || t.includes('quan tri') || t.includes('sản phẩm') || t.includes('san pham'); }); });\r"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanTriAdmin",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanTriAdmin"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

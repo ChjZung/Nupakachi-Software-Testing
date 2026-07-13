@@ -1,0 +1,4165 @@
+{
+  "info": {
+    "_postman_id": "2d9eea9c-165b-43f7-83ea-0ebdd1b6e09e",
+    "name": "NUPAKACHI - Quan Ly San Pham",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54003216",
+    "_collection_link": "https://go.postman.co/collection/54003216-2d9eea9c-165b-43f7-83ea-0ebdd1b6e09e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "QuanLySanPham",
+      "item": [
+        {
+          "name": "TC01 - Them san pham hop le",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC01 - Khong co loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC01 - San pham duoc tao thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC71 - Kiem tra ben bi - Kiem tra toan ven",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC71-S4 - He thong phan hoi\", function () {\r",
+                  "    pm.expect(pm.response.code).to.equal(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC71-S4 - Khong loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC71-S4 - Co du lieu tra ve\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});\r",
+                  "\r",
+                  "try {\r",
+                  "\r",
+                  "    var json = JSON.parse(pm.response.text());\r",
+                  "\r",
+                  "    var products = json.data || json.content || json;\r",
+                  "\r",
+                  "    console.log(\"Tong san pham:\", products.length);\r",
+                  "\r",
+                  "} catch(e){\r",
+                  "\r",
+                  "    console.log(\"Response khong phai JSON\");\r",
+                  "    console.log(pm.response.text());\r",
+                  "\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC71 - Kiem tra ben bi - Xoa san pham",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC71-S3 - Xoa thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 204]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC71-S3 - Khong loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC71 -Kiem tra ben bi - Sua san pham",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC71-S2 - Sua thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 204]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC71-S2 - Khong loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC71 - Kiem tra ben bi - Them san pham test",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC71-S1 - Status hop le\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC71-S1 - Khong loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC71-S1 - Co response\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});\r",
+                  "\r",
+                  "try {\r",
+                  "\r",
+                  "    var json = JSON.parse(pm.response.text());\r",
+                  "\r",
+                  "    if(json.id){\r",
+                  "        var ids = JSON.parse(\r",
+                  "            pm.collectionVariables.get(\"bulkIds\") || \"[]\"\r",
+                  "        );\r",
+                  "\r",
+                  "        ids.push(json.id);\r",
+                  "\r",
+                  "        pm.collectionVariables.set(\r",
+                  "            \"bulkIds\",\r",
+                  "            JSON.stringify(ids)\r",
+                  "        );\r",
+                  "    }\r",
+                  "\r",
+                  "} catch(e){\r",
+                  "\r",
+                  "    console.log(\"Response khong phai JSON\");\r",
+                  "    console.log(pm.response.text());\r",
+                  "\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC59 - Tim kiem ket hop tu khoa va danh muc",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC59 - Tim kiem ket hop\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC59 - He thong hoat dong\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC58 - Tim kiem theo danh muc",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC58 - Tim kiem theo danh muc\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC58 - Khong loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC62 - Tim kiem san pham theo ma san pham",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC62 - Tim theo ma san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302,404]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC62 - He thong phan hoi\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC61 - Tim kiem ky tu dac biet",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC61 - He thong xu ly an toan, hien thi khogn co san pham\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC61 - Khong loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC60 - Tim kiem khong phan biet hoa thuong",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC60 - Tim kiem khong phan biet hoa thuong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC60 - Khong loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC57 - Tim kiem de trong",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC57 - Trang tai thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC57 - Co du lieu tra ve\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC56 - Khong tim thay san pham",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC56 - He thong phan hoi khong co san pham nao\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,404]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC56 - Hien thi danh sach trong\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC55 - Tim kiem tu khoa mot phan",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC55 - He thong phan hoi\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC55 - Khong loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC54 - Tim kiem ten chinh xac",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC54 - Trang tim kiem hien thi\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC54 - Co du lieu tra ve\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC49 - Xoa san pham het hang",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC49 - Xoa thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC50 - Xoa san pham het hang co trong don hang",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC50 - San pham khong bi xoa\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(204);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC50 - He thong co phan hoi\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC52 - Xoa san pham va kiem tra du lieu lic su",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC52 - Lay du lieu lich su thanh cong\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC52 - Du lieu lich su van ton tai\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC48 - Xoa san pham co trong don hang",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC48 - Co phan hoi tu he thong\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC48 - Co thong bao loi\", function () {\r",
+                  "    pm.expect(pm.response.text().length).to.be.greaterThan(0);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC46 - Xoa san pham",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC46 - Xoa thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/QuanLySanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "QuanLySanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC43 - Sua ten Unicode",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC43 - Cap nhat san pham thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,204,302]);\r",
+                  "});\r",
+                  "pm.test(\"TC43 - San pham duoc luu trong danh sach\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun 😊 #1",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC01 - Them san pham hop le Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC42 - Khong chap nhan chu trong so luong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC42 - Khong luu duoc san pham\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "hai trăm",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC41 - Sua gia thanh chu",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC41 - Khong chap nhan chu trong gia\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC41 - Khong luu duoc san pham\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "hai trăm nghin",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC28 - Sua gia thanh hop le",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC28 - Cap nhat gia hop le thanh cong\", function () {\r",
+                  "\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302]);\r",
+                  "\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC28 - He thong khong bi loi server\", function () {\r",
+                  "\r",
+                  "    const body = pm.response.text();\r",
+                  "\r",
+                  "    pm.expect(body).to.not.include(\"Server Error\");\r",
+                  "\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC28 - Khong co thong bao loi\", function () {\r",
+                  "\r",
+                  "    const body = pm.response.text();\r",
+                  "\r",
+                  "    pm.expect(\r",
+                  "        body.includes(\"Error\") ||\r",
+                  "        body.includes(\"An error occurred\")\r",
+                  "    ).to.be.false;\r",
+                  "\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC29 - Sua gia am",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC29 - He thong khong bi loi server\", function () {\r",
+                  "\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC29 - Gia am phai bi tu choi\", function () {\r",
+                  "\r",
+                  "    const body = pm.response.text();\r",
+                  "\r",
+                  "    pm.expect(\r",
+                  "        body.includes(\"greater than or equal to 0\") ||\r",
+                  "        body.includes(\"Error\") ||\r",
+                  "        body.includes(\"An error occurred\") ||\r",
+                  "        pm.response.code !== 302\r",
+                  "    ).to.be.true;\r",
+                  "\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "-100000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC27 - Sua ten san pham hop le",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC27 - Cap nhat thanh cong\", function () {\r",
+                  "\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200,302]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC27 - Khong co loi server\", function () {\r",
+                  "\r",
+                  "    const body = pm.response.text();\r",
+                  "\r",
+                  "    pm.expect(body).to.not.include(\"Server Error\");\r",
+                  "\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC25 - Them san pham voi gia 999999999",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC25 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC25 - Gia vuot gioi han phai bi tu choi\", function () {\r",
+                  "\r",
+                  "    const body = pm.response.text();\r",
+                  "\r",
+                  "    pm.expect(\r",
+                  "        body.includes(\"999999000\") ||\r",
+                  "        body.includes(\"Error\") ||\r",
+                  "        body.includes(\"valid\") ||\r",
+                  "        pm.response.code !== 302\r",
+                  "    ).to.be.true;\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "999999999",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC23 - Them san pham voi ten 500 ky tu",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC23 - He thong xu ly request\", function () {\r",
+                  "\r",
+                  "    pm.expect(pm.response.text())\r",
+                  "      .to.not.include(\"Server Error\");\r",
+                  "\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC23 - San pham ten 500 ky tu khong duoc luu\", function () {\r",
+                  "\r",
+                  "    pm.expect(pm.response.code)\r",
+                  "      .to.not.equal(302);\r",
+                  "\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC20 - Gia bang chu",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC20 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC20 - Khong chap nhan chu trong truong gia\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "abc",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC19 - Khong chon nha cung cap",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC19 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC19 - Khong luu san pham khi thieu nha cung cap\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC18 - Anh qua dung luong",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC18 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC18 - Khong cho phep upload anh qua dung luong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/hinh2.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC17 - Anh sai dinh dang PDF",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC17 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC17 - Khong cho phep upload file PDF\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/Lab06A-Ex01-Stand-Alone Root CA Implementation.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC16 - Ten trung lap",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC16 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC16 - Khong cho luu san pham trung ten\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo Cardigan Nam Dáng Rộng Đen",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC15 - Khong co anh",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC15 - Khong co anh van luu duoc\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"An error occurred\");\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC015 - Luu san pham thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "value": null
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC14 - Khong chon danh muc",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC14 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC14 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC13 - Phan loai la so",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC13 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC13 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "44",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC12 - Bo trong phan loai",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC12 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC12 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC11 - Kich thuoc la so",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC11 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC11 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "12",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC10 - Bo trong kich thuoc",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC10 - He thong khong bi loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC10 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC09 - Bo trong mau sac",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC09 - He thong xu ly loi khi bo trong mau sac\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC09 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC08 - So luong bang 0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC08 - Khong co loi server\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"An error occurred\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC05 - Luu san pham thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC07 - So luong am",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC07 - Khong cho phep luu san pham co so luong ton am\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC07 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "-500",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC06 - Bo trong so luong ton",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC06 - He thong thong bao loi\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC06 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC05 - Gia bang 0",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC05 - Gia bang 0 duoc chap nhan\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"An error occurred\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC05 - Luu san pham thanh cong\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Áo thun trắng",
+                  "type": "text",
+                  "uuid": "bd5f6356-2c4b-426d-8a1a-d8c9852f53fc"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "5e0daab3-e7c1-4583-8baa-b7d3d3461ce6"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "203f0900-1e39-4150-bca6-ba24be4e2ab5"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "9f7fd014-44f6-4859-9c5f-4d248ab16776"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "1fd90767-0cc8-45f1-b2e1-12008fcb38a3"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "eb8f62f4-808a-4419-bb45-7ca2ba4cb208"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1692df3c-11b9-45cc-89e2-43aa5836a16e"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32da5bd6-a1a1-4aee-bd26-3d03b7af8743"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Áo thun cotton 100%",
+                  "type": "text",
+                  "uuid": "2718f258-d0d7-4d0b-b75c-5c20c08c5bf6"
+                },
+                {
+                  "key": "inhAnh",
+                  "type": "file",
+                  "uuid": "ee682ffb-4396-41b6-94d9-75e17bdbe9e9",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC02 - Bo trong ten san pham",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC02 - He thong thong bao loi\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC02 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "38a8d176-f956-46e2-9018-233051f81757"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "150000",
+                  "type": "text",
+                  "uuid": "4f9739ed-8ed4-4d85-bc73-1db1e5f576ea"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "5977da71-ef02-4baa-b4d8-00ed1fc735ac"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "2c42d9ed-3757-4ec2-ab23-415158a4b0df"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "566fe340-4ce6-4e4c-8cb1-a76b2c34e312"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "5bbd0a1e-07f2-4ca2-821a-7c47898fe3e8"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "7ec14a6a-5c37-4365-a32a-2ce7836639e2"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "7eb79312-4003-4f59-b422-b27d3e1f6ce1"
+                },
+                {
+                  "key": "MOTA",
+                  "value": "Test TC02",
+                  "type": "text",
+                  "uuid": "75b691c2-dcc7-4b33-a31c-6479827a3478"
+                },
+                {
+                  "key": "HinhAnh",
+                  "type": "file",
+                  "uuid": "4fa40ba3-b519-4918-a6ed-f8467085ff54",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC03 - Bo trong gia",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC03 - He thong thong bao loi\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC03 - Khong luu san pham.\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Test TC03",
+                  "type": "text",
+                  "uuid": "4759015d-376c-46c6-a8d5-bf4791fc44cb"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "cfca3140-57c1-4027-b360-9facd6965e8d"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "79f09c9f-c528-441d-99cf-7f305face9c2"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "1268b834-cf1b-4ab2-9e89-d8e60f71231b"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "m",
+                  "type": "text",
+                  "uuid": "37ef7cb2-750b-4cb3-9a7b-ca582f79bc5b"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "ce890fed-c763-4f4c-a1b6-e9896f0e3b2d"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "6b00d7ba-4b6a-44e6-8f29-8ac9015374fe"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "b299df84-c442-47ee-a9f1-851e5b680ca7"
+                },
+                {
+                  "key": "HINHANH",
+                  "type": "file",
+                  "uuid": "49374f45-6220-4464-8a1a-2e180196a5b0",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TC04 - Gia am",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"TC04 - He thong xu ly loi gia am\", function () {\r",
+                  "    pm.expect(pm.response.text()).to.not.include(\"Server Error\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"TC04 - Khong luu san pham\", function () {\r",
+                  "    pm.expect(pm.response.code).to.not.equal(302);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "TENSANPHAM",
+                  "value": "Test TC04",
+                  "type": "text",
+                  "uuid": "53801433-c73e-4042-93f0-d5d496679a1a"
+                },
+                {
+                  "key": "GIABAN",
+                  "value": "-500000",
+                  "type": "text",
+                  "uuid": "b8f53c2b-4e0b-4a68-89a9-1a252d2ead98"
+                },
+                {
+                  "key": "SOLUONGTON",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "158c4025-bff0-4cfd-872f-7e91eccc3e94"
+                },
+                {
+                  "key": "MAUSAC",
+                  "value": "Xanh navi",
+                  "type": "text",
+                  "uuid": "c3107da2-f244-451e-b0b9-96f3e293b703"
+                },
+                {
+                  "key": "KICHTHUOC",
+                  "value": "M",
+                  "type": "text",
+                  "uuid": "8c5d20de-7faa-444d-a1c8-ab3e172c5d5b"
+                },
+                {
+                  "key": "PHANLOAI",
+                  "value": "Nữ",
+                  "type": "text",
+                  "uuid": "c84514d0-ff5f-41b0-bcb5-9389708f57cc"
+                },
+                {
+                  "key": "MADANHMUC",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "8257745f-b3d5-4496-8457-fed4c8c9b1af"
+                },
+                {
+                  "key": "MANHACUNGCAP",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "735f4f05-b8bf-4b4d-877e-cbc86f6436d5"
+                },
+                {
+                  "key": "HINHANH",
+                  "type": "file",
+                  "uuid": "4f290a6c-cb94-475f-8862-24fc22c2706b",
+                  "src": "/C:/Users/admin/Downloads/anh1.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Admin/ThemSanPham",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Admin",
+                "ThemSanPham"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth - Dang Nhap",
+      "item": [
+        {
+          "name": "Login Admin",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Login thanh cong - status 200 hoac 302\", function () {\r",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+                  "});\r",
+                  "\r",
+                  "// Luu cookie tu dong cho cac request sau\r",
+                  "var cookies = pm.cookies.toObject();\r",
+                  "pm.environment.set(\"session_cookie\", JSON.stringify(cookies));"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "admin",
+                  "type": "text",
+                  "uuid": "b49a5d3d-aa0e-4572-b99a-904dd7afb46e"
+                },
+                {
+                  "key": "password",
+                  "value": "admin",
+                  "type": "text",
+                  "uuid": "a4b56d88-6837-4e81-b0e4-5af81a6edeac"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://nupakachi.somee.com/Account/DangNhap",
+              "protocol": "http",
+              "host": [
+                "nupakachi",
+                "somee",
+                "com"
+              ],
+              "path": [
+                "Account",
+                "DangNhap"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

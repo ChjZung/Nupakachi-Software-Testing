@@ -1,0 +1,1717 @@
+{
+  "id": "584a362c-0c8c-4888-bfdd-f730b3295ba6",
+  "version": "2.0",
+  "name": "KiemDinh_GioHang",
+  "url": "http://nupakachi.somee.com/",
+  "tests": [{
+    "id": "d7cbd694-8b1d-4e57-afab-4cc749fbc8a9",
+    "name": "TC31_MoTrangGioHang",
+    "commands": [{
+      "id": "9598256e-1c04-4e76-80ff-c53ca4a16d6f",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "189f2a99-cd7d-41e0-b103-6ea7fafc03d4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e98fe4e4-f624-40cc-aeeb-82968c4813b0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbb7160b-33c7-48c0-a195-5583d32905b9",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11081784-2467-4be2-9fcb-832530255b39",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.text-pink",
+      "targets": [
+        ["css=.text-pink", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Giỏ hàng của bạn đang trống!')]", "xpath:innerText"]
+      ],
+      "value": "Giỏ hàng của bạn đang trống!"
+    }, {
+      "id": "f07085d6-404c-45ee-b96d-f2255c54b6fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=strong",
+      "targets": [
+        ["css=strong", "css:finder"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'bộ sưu tập trang phục tuyệt đẹp')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c6ce9078-77ba-4d14-a26a-43ec04715b53",
+      "comment": "",
+      "command": "click",
+      "target": "css=.empty-cart-area",
+      "targets": [
+        ["css=.empty-cart-area", "css:finder"],
+        ["xpath=//body/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7ea045b-80c4-4a30-972e-b2c5fbc85dc9",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1dc0cd19-be7d-410e-a649-83c0ce2690dd",
+    "name": "TC32_ThemTrangChiTiet",
+    "commands": [{
+      "id": "a1585f09-814c-4566-952a-9cf94892150b",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7d6326c-1414-4b35-a653-f4f64b1e4681",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ac8894f0-ac34-4594-9899-7bde0993404e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản phẩm",
+      "targets": [
+        ["linkText=Sản phẩm", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Home/SanPham')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "452422f2-ee64-4c91-81d7-deee23ed93af",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "977d931d-7fd1-4e54-b83d-a05d98b30fe6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Xem chi tiết",
+      "targets": [
+        ["linkText=Xem chi tiết", "linkText"],
+        ["css=.col-lg-4:nth-child(1) .btn-pink-outline", "css:finder"],
+        ["xpath=//a[contains(text(),'Xem chi tiết')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/24')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Xem chi tiết')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ae0ec95-18d5-4ac7-99cc-3e07eb277f49",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "22615445-2ae8-44b2-9bc5-160491a8f834",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/button", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Thêm vào giỏ hàng')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0fab4ec-674c-4d66-84eb-74cfde1cb12b",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "61903f5c-3b28-44d0-ae27-05923dc63ac0",
+    "name": "TC33_ThemTuDanhSach",
+    "commands": [{
+      "id": "eb02d2bb-2102-43a5-86fa-d52b6f2d812c",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c85df91f-8f0a-4e5a-be17-edeb86e54636",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3c0dd47-8ca5-4285-a1cd-9be3140fbb7c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản phẩm",
+      "targets": [
+        ["linkText=Sản phẩm", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Home/SanPham')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "39f408c3-ed28-4180-a09d-c03efed08462",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(2) .btn-pink-outline",
+      "targets": [
+        ["css=.col-lg-4:nth-child(2) .btn-pink-outline", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xem chi tiết')])[2]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/31')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2fbb2d1-7e64-456d-8cd2-81e49f8fdff1",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4589dffa-0790-4a3d-8c79-f4706716efac",
+    "name": "TC34_ThemTuTimKiem",
+    "commands": [{
+      "id": "4bfef863-ab17-47ab-8ef1-73de838e4516",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67b32899-ab4e-480f-a2c3-ec580c4f7fd7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b97f73e-3263-4216-b2a2-28aec8dfdf9d",
+      "comment": "",
+      "command": "click",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cfb9367-9bff-4dc8-a8a6-537dac4a9f10",
+      "comment": "",
+      "command": "type",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Áo"
+    }, {
+      "id": "29f9c708-1d45-4355-a471-ecaa7361b9b1",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "79491c21-5ae7-4fc4-b86c-d65e68d30d0e",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64c5b507-11f8-4090-a968-8bfb654404b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(3) .btn-pink-outline",
+      "targets": [
+        ["css=.col-lg-4:nth-child(3) .btn-pink-outline", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xem chi tiết')])[3]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/22')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9c822f4-0a07-4c6d-b240-992b95004258",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/button", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Thêm vào giỏ hàng')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a842094-0bc6-494d-9556-987b34e82cc7",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e27556b1-82a4-456d-9494-247d52c91e36",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(2) .card-title",
+      "targets": [
+        ["css=.card:nth-child(2) .card-title", "css:finder"],
+        ["xpath=//div[2]/div/div/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Áo Khoác Da Nam Dáng Bomber Đen')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8471b41-5c08-442c-997e-743372f264f9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(2) .card-title",
+      "targets": [
+        ["css=.card:nth-child(2) .card-title", "css:finder"],
+        ["xpath=//div[2]/div/div/h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Áo Khoác Da Nam Dáng Bomber Đen')]", "xpath:innerText"]
+      ],
+      "value": "Áo Khoác Da Nam Dáng Bomber Đen"
+    }, {
+      "id": "dbb8ff64-0676-4afe-a3b7-1997a3eff854",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(2)",
+      "targets": [
+        ["css=.col-md-4:nth-child(2)", "css:finder"],
+        ["xpath=//body/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "143e6fa4-3b32-4b7f-b246-3fea3c13b87e",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "8d7364a0-0653-41f5-b008-48e0c3e0db7a",
+    "name": "TC35_TangSoLuong",
+    "commands": [{
+      "id": "3af85045-a05c-4885-bc5d-7967a1ed83b6",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7eb1cca0-2633-4c8b-97a1-0c021a168fb8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "daa661b1-c1ab-44e3-8d93-f3ebda1c5b37",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9a6df06-6d90-4c6e-ad3c-b06690eb47fe",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09b930f1-3071-46d1-8850-cd145e39d33b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(1) .btn:nth-child(6)",
+      "targets": [
+        ["css=.card:nth-child(1) .btn:nth-child(6)", "css:finder"],
+        ["xpath=(//button[@name='soLuong'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac29d83d-4d81-4e18-bfce-8e1a387e82cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(1) .flex-fill > .d-flex",
+      "targets": [
+        ["css=.card:nth-child(1) .flex-fill > .d-flex", "css:finder"],
+        ["xpath=//form[@action='/Home/CapNhatGioHang']", "xpath:attributes"],
+        ["xpath=//div/div/div/div/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5feb8e17-a8d3-4a22-813f-2211f7a1bea9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(1) .px-2",
+      "targets": [
+        ["css=.card:nth-child(1) .px-2", "css:finder"],
+        ["xpath=//div/div/div/div/form/span", "xpath:position"],
+        ["xpath=//span[contains(.,'5')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a44eb395-6527-4625-a086-274d9b995348",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5127deaf-e901-47ff-a493-2464c2e3c73c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(2)",
+      "targets": [
+        ["css=.col-md-4:nth-child(2)", "css:finder"],
+        ["xpath=//body/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ed34f26-5bb8-4ac5-bd04-41f6f51b69a9",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "17f74d0b-a735-468a-a550-d0e10321a010",
+    "name": "TC36_GiamSoLuong",
+    "commands": [{
+      "id": "33aa46d4-3ace-4855-9e6e-c3c8761f66dc",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d8a7235-eec4-4384-a9af-f1672fdc85d2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6aaf57d-5842-454b-9069-1cbb0cebdf92",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "718ff3aa-e858-4bba-9e21-cab0d9ce3af6",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bf4948a-c88b-4ec4-8940-23e257a2194b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(2) .btn:nth-child(4)",
+      "targets": [
+        ["css=.card:nth-child(2) .btn:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@name='soLuong'])[3]", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f072c9c1-78d7-4a23-a798-95df945fd9c3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(2) .px-2",
+      "targets": [
+        ["css=.card:nth-child(2) .px-2", "css:finder"],
+        ["xpath=//div[2]/div/div/form/span", "xpath:position"],
+        ["xpath=//span[contains(.,'3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d54ded2-6612-4885-9da7-58e8a8b904eb",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fdcb9f1b-7c40-4b96-8bd6-6801685c232b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b051e856-44d1-48b8-b77b-22dfffa11138",
+    "name": "TC37_NhapTrucTiep",
+    "commands": [{
+      "id": "c1187880-6907-486c-8d7d-c03cd3b63636",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f3a7d42-6c7e-4dca-8c77-be8840fdcc0e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe6f5696-7c52-44bc-a02d-0a5c7ff81c0b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d4dc76d-3e9f-4d6f-9f94-226fe008b05d",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6364a05-8d98-4a0a-aaad-778ab0d60467",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(1) .px-2",
+      "targets": [
+        ["css=.card:nth-child(1) .px-2", "css:finder"],
+        ["xpath=//div/div/div/div/form/span", "xpath:position"],
+        ["xpath=//span[contains(.,'8')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09e3cf22-a437-46ab-9f5d-9a1f45c4a1ac",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản phẩm",
+      "targets": [
+        ["linkText=Sản phẩm", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Home/SanPham')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55781f0b-f53c-4da1-a493-86eb4ba3657d",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "82d71f9c-5d57-4fa0-808b-6a7d05592800",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(2) .btn-pink-outline",
+      "targets": [
+        ["css=.col-lg-4:nth-child(2) .btn-pink-outline", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xem chi tiết')])[2]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/31')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb89eb41-aaa7-4741-8cea-a726fc773f59",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "096424ce-a678-471d-8ac7-793754360dc6",
+      "comment": "",
+      "command": "click",
+      "target": "id=soluong",
+      "targets": [
+        ["id=soluong", "id"],
+        ["name=soLuong", "name"],
+        ["css=#soluong", "css:finder"],
+        ["xpath=//input[@id='soluong']", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a633770-f78e-48ea-8ec9-04b730ad5d1e",
+      "comment": "",
+      "command": "type",
+      "target": "id=soluong",
+      "targets": [
+        ["id=soluong", "id"],
+        ["name=soLuong", "name"],
+        ["css=#soluong", "css:finder"],
+        ["xpath=//input[@id='soluong']", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "58475c48-aa2d-4c1e-96fd-a2cd9b3e6cf7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/button", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Thêm vào giỏ hàng')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f596961d-f09f-4003-bbdf-ead5a7312988",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fa5c63ce-9b43-4d8b-ba16-781fbe0332e7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(3) .px-2",
+      "targets": [
+        ["css=.card:nth-child(3) .px-2", "css:finder"],
+        ["xpath=//div[3]/div/div/form/span", "xpath:position"],
+        ["xpath=//span[contains(.,'5')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6677c7f7-5ba3-4d5e-8f93-605637a33b3b",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba1a8ab2-59f6-4ebf-bdb7-d583c2ec3362",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(2)",
+      "targets": [
+        ["css=.col-md-4:nth-child(2)", "css:finder"],
+        ["xpath=//body/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "316f0a89-2931-48c4-81be-b9c1d3705636",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "2a8e620d-abbb-45d0-8c8b-32bf6cc55a85",
+    "name": "TC38_NhapChu",
+    "commands": [{
+      "id": "2f49e9de-527e-4871-a99c-bc559a51f427",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cbd2ce31-535b-459f-bc02-96b81c1ae82e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4a1b7db-6a09-447e-aaaa-1746cae53f3e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản phẩm",
+      "targets": [
+        ["linkText=Sản phẩm", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Home/SanPham')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d85d11d-ce0c-4537-82f1-ccae2a7b04cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(3) .btn-pink-outline",
+      "targets": [
+        ["css=.col-lg-4:nth-child(3) .btn-pink-outline", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xem chi tiết')])[3]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/22')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e381912-9cf8-4fe6-9860-7caa28cfc5a7",
+      "comment": "",
+      "command": "click",
+      "target": "id=soluong",
+      "targets": [
+        ["id=soluong", "id"],
+        ["name=soLuong", "name"],
+        ["css=#soluong", "css:finder"],
+        ["xpath=//input[@id='soluong']", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "81d4ae13-58cd-4ae6-938c-fadf284091aa",
+      "comment": "",
+      "command": "type",
+      "target": "id=soluong",
+      "targets": [
+        ["id=soluong", "id"],
+        ["name=soLuong", "name"],
+        ["css=#soluong", "css:finder"],
+        ["xpath=//input[@id='soluong']", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35b3bea1-1aa6-4534-ac0f-f29faf8edd08",
+      "comment": "",
+      "command": "click",
+      "target": "css=#frmAddCart",
+      "targets": [
+        ["css=#frmAddCart", "css:finder"],
+        ["xpath=//form[@id='frmAddCart']", "xpath:attributes"],
+        ["xpath=//div/div/div/div[2]/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa7ebf8b-823d-42c7-8814-9b4f877f10eb",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "87cbaab0-c0a6-44e0-9f92-7dec85764410",
+    "name": "TC39_XoaSanPham",
+    "commands": [{
+      "id": "27883f5e-7fc7-4a3c-9196-7093e085207a",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5169ced9-a4d3-480f-9203-60e0ba535c6d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0460e799-485b-4585-bb56-c52d92dcc6f0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8931b254-ce68-4836-a5d5-f50f890c5b99",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f0d2c83-376d-453f-a34c-1183aa365444",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=✖",
+      "targets": [
+        ["linkText=✖", "linkText"],
+        ["css=.card:nth-child(1) .ms-3 > .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'✖')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XoaKhoiGio/24?size=S&mau=%C4%90en')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'✖')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d254cdcb-512b-4f68-8e75-9554e6efc34e",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a440ee49-f90f-4e04-b4f7-460e4db7bcf2",
+    "name": "TC40_XoaRongGioHang",
+    "commands": [{
+      "id": "80606468-001c-4329-aa5f-e9227e3b8a53",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "992f8beb-0f51-4c85-9544-345678859a30",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50146ed5-44cf-491f-88ac-52743ad30351",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a279313b-b174-4920-a818-fdcd4f491fdf",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8444ac50-e01c-4e40-a92d-27c15377e130",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=✖",
+      "targets": [
+        ["linkText=✖", "linkText"],
+        ["css=.btn-outline-danger", "css:finder"],
+        ["xpath=//a[contains(text(),'✖')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XoaKhoiGio/24?size=S&mau=%C4%90en')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'✖')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d78ec0b9-5d7a-4723-8b96-cb945face047",
+      "comment": "",
+      "command": "click",
+      "target": "css=.text-pink",
+      "targets": [
+        ["css=.text-pink", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Giỏ hàng của bạn đang trống!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fc106c6-f5cf-46de-a122-8f1f6d367bcc",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.text-pink",
+      "targets": [
+        ["css=.text-pink", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Giỏ hàng của bạn đang trống!')]", "xpath:innerText"]
+      ],
+      "value": "Giỏ hàng của bạn đang trống!"
+    }, {
+      "id": "92ccaf8b-ab27-4708-821e-ee144555cb96",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "25ad5873-fa6a-4a3c-adbe-c4a908a299e5",
+    "name": "TC41_CheckTongTien",
+    "commands": [{
+      "id": "9926df4f-013e-4f64-b07d-8a0f8c0ec54a",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95d8e5d6-30ad-4e5d-b82b-0dedca52ba2c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8b33586-13b7-4bc3-b8fc-6ce41e70462c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebdb4748-4b4d-4455-8548-3963ad83a7b3",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e225c89c-25e5-4938-b061-7a15937c0f8b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(6)",
+      "targets": [
+        ["css=.btn:nth-child(6)", "css:finder"],
+        ["xpath=(//button[@name='soLuong'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb38b741-b1c8-460e-994d-b4528ff073ff",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-md-4 .card-body",
+      "targets": [
+        ["css=.col-md-4 .card-body", "css:finder"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11389f92-0463-4c76-b496-668c874b41b3",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fa1eb30a-3d24-43ec-b4da-eb13cd596a98",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e0bd741a-bb42-4e59-8677-23aa123c70f5",
+    "name": "TC42_BadgeCapNhatDung",
+    "commands": [{
+      "id": "95b8f24b-84b1-418f-9ff7-1a5a3795bbd0",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a215c78-229f-4625-9129-238dc3eebfd9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b35bd0e2-94d1-43e1-83a5-3301b760f3c6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aedc03c8-f4c7-465b-a26b-983a98f9d99b",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e583986c-29c0-4774-9859-94e4506696ae",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(6)",
+      "targets": [
+        ["css=.btn:nth-child(6)", "css:finder"],
+        ["xpath=(//button[@name='soLuong'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e460759d-4024-4d17-8d22-4bc0b9b8365d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.px-2",
+      "targets": [
+        ["css=.px-2", "css:finder"],
+        ["xpath=//div/div/div/div/form/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6df36573-2e52-43f8-b169-5c0f7864af62",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "112971c9-244b-4378-8e60-0c0daeb5107c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mb-3 > .card-body",
+      "targets": [
+        ["css=.mb-3 > .card-body", "css:finder"],
+        ["xpath=//div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3d76915-c319-490e-83d8-93cd651c410d",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "bf3b6203-e541-4c56-bf4f-a04f2b763635",
+    "name": "TC43_ThongBaoThanhCong",
+    "commands": [{
+      "id": "3fa57bfd-dc30-4259-967f-577260215850",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98b3b518-5dee-4dd3-acdd-7d5937a1e9bd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea036c17-cb4c-4e37-a717-b108437a7b12",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản phẩm",
+      "targets": [
+        ["linkText=Sản phẩm", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Home/SanPham')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed37c5de-f64f-4560-8b31-80b29fd57d39",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "74b19483-21a4-4e30-8f3d-0299917ec7c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(2) .btn-pink-outline",
+      "targets": [
+        ["css=.col-lg-4:nth-child(2) .btn-pink-outline", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xem chi tiết')])[2]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/31')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23a2c72b-84c4-42ec-bc43-8ed48f43d0b1",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e8a5a08-58d9-4201-8ac7-613247990cd3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/button", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Thêm vào giỏ hàng')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cacff502-1299-4d7a-be53-14e45778fde9",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f395e5c-df16-49e7-9b98-b28d1623f6c3",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Đã thêm vào giỏ hàng!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8c1b50b2-d2cc-48fd-8aa2-d2cc61a28f39",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "58faaa37-c653-42c8-93ab-82037bf91907",
+    "name": "TC44_LoiVuotTonKho",
+    "commands": [{
+      "id": "7876b390-4dc5-4526-b3f2-9b1989fb6bf8",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a60ad32d-7687-4365-aef0-8ac5a65a59d4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b2388a0-6007-4e0e-88db-8b5c35a8ca67",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản phẩm",
+      "targets": [
+        ["linkText=Sản phẩm", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Home/SanPham')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "74dcc77c-fef4-4c70-b20f-7824c6255894",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eff5efaa-b21b-457c-a369-deeeaf04035e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-4:nth-child(3) .btn-pink-outline",
+      "targets": [
+        ["css=.col-lg-4:nth-child(3) .btn-pink-outline", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xem chi tiết')])[3]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/22')]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f774ba79-3eea-42ec-9727-b0944eab0e3f",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d75bb11f-7535-4e9c-b2b1-dfb4585a0c13",
+      "comment": "",
+      "command": "click",
+      "target": "id=soluong",
+      "targets": [
+        ["id=soluong", "id"],
+        ["name=soLuong", "name"],
+        ["css=#soluong", "css:finder"],
+        ["xpath=//input[@id='soluong']", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59ab53fd-fbe2-4929-bd78-2310ef53f665",
+      "comment": "",
+      "command": "type",
+      "target": "id=soluong",
+      "targets": [
+        ["id=soluong", "id"],
+        ["name=soLuong", "name"],
+        ["css=#soluong", "css:finder"],
+        ["xpath=//input[@id='soluong']", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "9999"
+    }, {
+      "id": "7209280f-d600-485e-83ec-442e23587958",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1439fcd4-76d9-4220-b5c1-17aaa1009864",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-pink",
+      "targets": [
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='frmAddCart']/button", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Thêm vào giỏ hàng')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff08940d-a4c6-4826-9c83-daa973d3fa2a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#frmAddCart",
+      "targets": [
+        ["css=#frmAddCart", "css:finder"],
+        ["xpath=//form[@id='frmAddCart']", "xpath:attributes"],
+        ["xpath=//div/div/div/div[2]/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f5c8522-4463-44cb-bef6-3c518f0d5bdd",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "485ca432-841b-440b-8c40-c76217ec87b3",
+    "name": "TC45_NutThanhToan_CoHang",
+    "commands": [{
+      "id": "1793370b-1e3c-4f32-89cb-eae0a7c72971",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ec86be0-1269-4481-a6cf-1524615885ec",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b9f78e5-643f-47f3-a55e-c87ced0ea0d5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "07a34191-7a5a-42fb-ba7a-162ea34dae66",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe0efbbc-8d76-4976-844f-c0164284248c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Thanh toán",
+      "targets": [
+        ["linkText=Thanh toán", "linkText"],
+        ["css=.btn-pink", "css:finder"],
+        ["xpath=//a[contains(text(),'Thanh toán')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/ThanhToan')]", "xpath:href"],
+        ["xpath=//body/div/div/div/div[2]/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Thanh toán')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "91592124-d854-44e5-bff4-3d81418bbb68",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c691eb51-8519-4b78-9b51-79040951060f",
+    "name": "TC46_NutThanhToan_Rong",
+    "commands": [{
+      "id": "1c5fe50f-461b-42fb-a7e4-e2778dbede8a",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d58be1d-ae42-43dc-aa1d-1818aef24197",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94e6374f-51dc-49c5-ac88-132fa25a5665",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "73974276-2e96-4d32-a558-506f2ee6c8ff",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "385c776f-e906-4c84-8656-bd08345b4698",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=✖",
+      "targets": [
+        ["linkText=✖", "linkText"],
+        ["css=.card:nth-child(1) .ms-3 > .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'✖')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XoaKhoiGio/24?size=S&mau=%C4%90en')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'✖')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1cc4ae23-dfb7-4a89-94a2-edf9959482e8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.text-pink",
+      "targets": [
+        ["css=.text-pink", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Giỏ hàng của bạn đang trống!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea145ad7-ba3c-4f91-932a-a7fc0f1c3534",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.text-pink",
+      "targets": [
+        ["css=.text-pink", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Giỏ hàng của bạn đang trống!')]", "xpath:innerText"]
+      ],
+      "value": "Giỏ hàng của bạn đang trống!"
+    }, {
+      "id": "6132f015-d263-47e9-a413-e0e98ad64a0f",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "879e576c-0290-41cb-9996-96a77c86e441",
+    "name": "TC47_MiniCartHienThi",
+    "commands": [{
+      "id": "0da55002-bb56-424e-95ea-e236e861199e",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5cf1d8b5-e8af-4c9d-b859-fa986ed8850b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1232x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d942563-4830-4371-b566-2a6eda4bebdc",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=🛍",
+      "targets": [
+        ["linkText=🛍", "linkText"],
+        ["css=.position-relative > .text-white", "css:finder"],
+        ["xpath=//a[contains(text(),'🛍')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/GioHang')]", "xpath:href"],
+        ["xpath=//div[3]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'🛍')]", "xpath:innerText"]
+      ],
+      "value": "🛍"
+    }, {
+      "id": "4af9dd58-7147-4a14-a9e2-4d641708ef65",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b82bfabd-3b66-4c0d-82e9-db28867e7a66",
+    "name": "TC48_GiaoDienMobile",
+    "commands": [{
+      "id": "90d1d339-8d08-44fa-a9a4-013792b58714",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15624ae6-c605-493a-a3c2-f2d3fb9b0c28",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "513x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9686b3a1-64f6-4900-ab21-fb4932f29e19",
+      "comment": "",
+      "command": "click",
+      "target": "css=.justify-content-between",
+      "targets": [
+        ["css=.justify-content-between", "css:finder"],
+        ["xpath=//div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ba95191-64ba-49e1-a3f5-3c5f91a4ed5d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.py-5:nth-child(6) .col-lg-3:nth-child(2) .btn-pink-outline",
+      "targets": [
+        ["css=.py-5:nth-child(6) .col-lg-3:nth-child(2) .btn-pink-outline", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xem chi tiết')])[6]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/70')]", "xpath:href"],
+        ["xpath=//section[6]/div/div/div[2]/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9cc3f35-c830-47a5-b9e0-b96a101c5a10",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d4889b3d-91fe-4234-99b3-4bf4daf42362",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(1)",
+      "targets": [
+        ["css=.row:nth-child(1)", "css:finder"],
+        ["xpath=//footer/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce1931c8-2628-4ee7-bf58-0632d0246a1e",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "751a2631-913c-44a8-ab22-545f10b9d4a9",
+    "name": "TC49_GiaoDienTablet",
+    "commands": [{
+      "id": "258921c1-801d-4372-a900-fd0db87ac4c8",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f79eb5a-9fdb-4d12-9c91-414af64560a9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1289x1079",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23cd88b0-9372-402c-a884-313d6cca1e50",
+      "comment": "",
+      "command": "click",
+      "target": "css=.justify-content-between",
+      "targets": [
+        ["css=.justify-content-between", "css:finder"],
+        ["xpath=//div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c82c27d-7e1e-42df-ab39-5dc76ebd428b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.py-5:nth-child(6)",
+      "targets": [
+        ["css=.py-5:nth-child(6)", "css:finder"],
+        ["xpath=//section[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "373a7b57-35aa-4914-9d30-47c8ceee9843",
+      "comment": "",
+      "command": "click",
+      "target": "css=.py-5:nth-child(6) .col-lg-3:nth-child(3) .btn-pink-outline",
+      "targets": [
+        ["css=.py-5:nth-child(6) .col-lg-3:nth-child(3) .btn-pink-outline", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xem chi tiết')])[7]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/XemChiTiet/69')]", "xpath:href"],
+        ["xpath=//section[6]/div/div/div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85042710-ebd3-40ca-bdb8-5ed5c0bfc50e",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e430e4e2-9e54-4d12-aa76-90b12a562f22",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(4)",
+      "targets": [
+        ["css=.row:nth-child(4)", "css:finder"],
+        ["xpath=//body/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c262d0f-d3c7-472b-aa53-f1a3ab6081e7",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f9916698-ac1e-4b88-b099-f0f4c06709a0",
+    "name": "TC50_GiaoDienDesktop",
+    "commands": [{
+      "id": "f11c42c7-c294-471d-afd9-f0c6fd248bfe",
+      "comment": "",
+      "command": "open",
+      "target": "http://nupakachi.somee.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "951ffff3-fd38-45b1-8913-5dff2159cceb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1687x1093",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4954c55d-d0d7-4ac2-be81-ab26317c56fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.py-5:nth-child(5)",
+      "targets": [
+        ["css=.py-5:nth-child(5)", "css:finder"],
+        ["xpath=//section[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e67b31c1-1d27-49ca-a405-c0dc234641b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hero-overlay",
+      "targets": [
+        ["css=.hero-overlay", "css:finder"],
+        ["xpath=//section/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fcdf5c6-380a-4a98-b3d6-693fe45c63ab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sản phẩm",
+      "targets": [
+        ["linkText=Sản phẩm", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sản phẩm')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Home/SanPham')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sản phẩm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6aa65e10-66f1-46e2-87da-95c67fd156e5",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "29547fba-fa3d-4fd1-ab0c-e2305c38a83c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=2",
+      "targets": [
+        ["linkText=2", "linkText"],
+        ["css=.page-item:nth-child(3) > .page-link", "css:finder"],
+        ["xpath=//a[contains(text(),'2')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Home/SanPham?page=2')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd4bb588-d310-4a95-b0a4-30e9d48676d1",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "337a2265-e703-41d1-bb6e-20a6e6eae5ef",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d7cbd694-8b1d-4e57-afab-4cc749fbc8a9"]
+  }],
+  "urls": ["http://nupakachi.somee.com/"],
+  "plugins": []
+}
